@@ -8,7 +8,8 @@ LONG = -105.8572453
 r = requests.get('https://api.forecast.io/forecast/%s/%d,%d' % (API_KEY, LAT, LONG))
 parsed_json = r.json()
 
+current = parsed_json["currently"]
 print parsed_json["timezone"]
-print parsed_json["currently"]
-
-
+print current["summary"]
+print current["apparentTemperature"]
+print current["humidity"]
